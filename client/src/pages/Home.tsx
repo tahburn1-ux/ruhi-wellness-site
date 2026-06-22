@@ -1,7 +1,7 @@
 /**
  * RUHI WELLNESS — Home Page
  * $10k design: cinematic hero, parallax, animated counters, luxury sections
- * Video: /manus-storage/ruhi-brand-film_2c24f2cb.mp4
+ * Video: https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/tzLgHYPnfYuQyEGM.mp4
  * Images: element-i-light, element-ii-motion, element-iii-glow, element-iv-pure
  */
 import { useEffect, useRef, useState } from "react";
@@ -67,10 +67,10 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const ELEMENTS = [
-  { num: "I",   name: "Light",  label: "Element I",   img: "/manus-storage/element-i-light_9cc13ced.webp",   price: "£180", duration: "45–60 min", tagline: "Brighten. Replenish. Defend." },
-  { num: "II",  name: "Motion", label: "Element II",  img: "/manus-storage/element-ii-motion_b08cc3cc.webp", price: "£180", duration: "45–60 min", tagline: "Energise. Focus. Recover." },
-  { num: "III", name: "Glow",   label: "Element III", img: "/manus-storage/element-iii-glow_eea91e01.webp",  price: "£200", duration: "45–60 min", tagline: "Clarify. Illuminate. Renew." },
-  { num: "IV",  name: "Pure",   label: "Element IV",  img: "/manus-storage/element-iv-pure_63be4c60.webp",   price: "£180", duration: "45–60 min", tagline: "Reset. Detox. Restore." },
+  { num: "I",   name: "Light",  label: "Element I",   img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/wOtwAoSfKoTSzqtE.webp",   price: "£180", duration: "45–60 min", tagline: "Brighten. Replenish. Defend." },
+  { num: "II",  name: "Motion", label: "Element II",  img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/ysDzLZcXoXmeRToh.webp", price: "£180", duration: "45–60 min", tagline: "Energise. Focus. Recover." },
+  { num: "III", name: "Glow",   label: "Element III", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/qDHqbpPQlXRTOYuV.webp",  price: "£200", duration: "45–60 min", tagline: "Clarify. Illuminate. Renew." },
+  { num: "IV",  name: "Pure",   label: "Element IV",  img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp",   price: "£180", duration: "45–60 min", tagline: "Reset. Detox. Restore." },
 ];
 
 const TESTIMONIALS = [
@@ -128,7 +128,7 @@ export default function Home() {
           ref={videoRef}
           autoPlay muted loop playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          src="/manus-storage/ruhi-brand-film_2c24f2cb.mp4"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/tzLgHYPnfYuQyEGM.mp4"
           style={{ filter: "brightness(0.88)" }}
         />
 

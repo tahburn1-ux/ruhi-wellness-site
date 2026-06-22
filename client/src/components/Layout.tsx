@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Logo */}
           <Link href="/">
             <img
-              src="/manus-storage/ruhi-logo-transparent_e4237816.png"
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/lzJQVAaVIHDogQjH.png"
               alt="Ruhi Wellness"
               style={{
                 height: "52px",
@@ -247,7 +247,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Brand */}
             <div className="md:col-span-4">
               <img
-                src="/manus-storage/ruhi-logo-transparent_e4237816.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/lzJQVAaVIHDogQjH.png"
                 alt="Ruhi Wellness"
                 style={{ height: "80px", width: "auto", objectFit: "contain", marginBottom: "1.25rem" }}
               />

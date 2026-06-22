@@ -25,7 +25,7 @@ const SCIENCE_ITEMS = [
   {
     num: "I",
     name: "Light",
-    img: "/manus-storage/element-i-light_9cc13ced.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/wOtwAoSfKoTSzqtE.webp",
     tagline: "Immune support & hydration",
     statement: "Vitamin C and zinc are well known to support the same processes in the body that keep skin and the immune system functioning well, which is why they're traditionally paired in nutrition science.",
     ingredients: ["Vitamin C", "Zinc", "B-Complex", "Magnesium", "Saline"],
@@ -33,7 +33,7 @@ const SCIENCE_ITEMS = [
   {
     num: "II",
     name: "Motion",
-    img: "/manus-storage/element-ii-motion_b08cc3cc.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/ysDzLZcXoXmeRToh.webp",
     tagline: "Energy & recovery",
     statement: "Vitamin B12 doesn't work in isolation — the body relies on a small group of B vitamins working together to convert nutrients into usable energy, which is the thinking behind this formulation.",
     ingredients: ["B12", "B-Complex", "Magnesium", "Amino acids", "Saline"],
@@ -41,7 +41,7 @@ const SCIENCE_ITEMS = [
   {
     num: "III",
     name: "Glow",
-    img: "/manus-storage/element-iii-glow_eea91e01.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/qDHqbpPQlXRTOYuV.webp",
     tagline: "Skin radiance",
     statement: "Vitamin C and glutathione are widely studied for the way they support and renew each other in the body, allowing both to remain effective for longer than either would alone.",
     ingredients: ["Glutathione", "Vitamin C", "Biotin", "Zinc", "Saline"],
@@ -49,7 +49,7 @@ const SCIENCE_ITEMS = [
   {
     num: "IV",
     name: "Pure",
-    img: "/manus-storage/element-iv-pure_63be4c60.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp",
     tagline: "Detox & clarity",
     statement: "Glutathione is often described as the body's master antioxidant, playing a central role in the systems the body already uses to manage everyday oxidative stress.",
     ingredients: ["Glutathione", "Vitamin C", "Saline"],

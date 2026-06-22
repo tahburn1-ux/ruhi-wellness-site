@@ -24,7 +24,7 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 const ELEMENTS = [
   {
     num: "I", name: "Light", label: "Element I",
-    img: "/manus-storage/element-i-light_9cc13ced.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/wOtwAoSfKoTSzqtE.webp",
     price: "£180", duration: "45–60 minutes",
     tagline: "Brighten. Replenish. Defend.",
     topBenefits: ["Strengthens daily immune defence", "Brightens and refreshes the complexion"],
@@ -40,7 +40,7 @@ const ELEMENTS = [
   },
   {
     num: "II", name: "Motion", label: "Element II",
-    img: "/manus-storage/element-ii-motion_b08cc3cc.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/ysDzLZcXoXmeRToh.webp",
     price: "£180", duration: "45–60 minutes",
     tagline: "Energise. Focus. Recover.",
     topBenefits: ["Boosts natural energy levels", "Supports mental clarity and focus"],
@@ -56,7 +56,7 @@ const ELEMENTS = [
   },
   {
     num: "III", name: "Glow", label: "Element III",
-    img: "/manus-storage/element-iii-glow_eea91e01.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/qDHqbpPQlXRTOYuV.webp",
     price: "£200", duration: "45–60 minutes",
     tagline: "Clarify. Illuminate. Renew.",
     topBenefits: ["Visibly brightens and evens skin tone", "Supports a luminous, lit-from-within complexion"],
@@ -72,7 +72,7 @@ const ELEMENTS = [
   },
   {
     num: "IV", name: "Pure", label: "Element IV",
-    img: "/manus-storage/element-iv-pure_63be4c60.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp",
     price: "£180", duration: "45–60 minutes",
     tagline: "Reset. Detox. Restore.",
     topBenefits: ["Supports natural detoxification", "Promotes mental clarity and a sense of reset"],

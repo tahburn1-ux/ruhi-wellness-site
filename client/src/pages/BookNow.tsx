@@ -23,10 +23,10 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const ELEMENTS_OPTIONS = [
-  { value: "element-i-light",    label: "Element I",   sub: "Light",  price: "£180", duration: "45–60 min", img: "/manus-storage/element-i-light_9cc13ced.webp" },
-  { value: "element-ii-motion",  label: "Element II",  sub: "Motion", price: "£180", duration: "45–60 min", img: "/manus-storage/element-ii-motion_b08cc3cc.webp" },
-  { value: "element-iii-glow",   label: "Element III", sub: "Glow",   price: "£200", duration: "45–60 min", img: "/manus-storage/element-iii-glow_eea91e01.webp" },
-  { value: "element-iv-pure",    label: "Element IV",  sub: "Pure",   price: "£180", duration: "45–60 min", img: "/manus-storage/element-iv-pure_63be4c60.webp" },
+  { value: "element-i-light",    label: "Element I",   sub: "Light",  price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/wOtwAoSfKoTSzqtE.webp" },
+  { value: "element-ii-motion",  label: "Element II",  sub: "Motion", price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/ysDzLZcXoXmeRToh.webp" },
+  { value: "element-iii-glow",   label: "Element III", sub: "Glow",   price: "£200", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/qDHqbpPQlXRTOYuV.webp" },
+  { value: "element-iv-pure",    label: "Element IV",  sub: "Pure",   price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp" },
   { value: "consultation",       label: "Consultation", sub: "Free 15-min call", price: "Free", duration: "15 min", img: "" },
 ];
 
