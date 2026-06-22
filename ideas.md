@@ -1,52 +1,57 @@
-# Liquid Vitality — Design Brainstorm
+# Ruhi Wellness — Design Direction
 
-## Approach A: Biopunk Luminescence
-<response>
-<text>
-**Design Movement:** Biopunk meets Clinical Luxury — inspired by bioluminescent organisms and sterile medical precision.
-**Core Principles:** Glowing fluid forms, clinical whitespace, biomorphic curves, depth through layered translucency
-**Color Philosophy:** Deep navy (#001d32) base with electric cyan (#00d4ff) and soft aquamarine (#69e5ff) accents — evoking IV fluid bags lit from within
-**Layout Paradigm:** Asymmetric split columns with floating glass panels; hero uses a full-bleed fluid canvas with text anchored left
-**Signature Elements:** Animated drip tube SVG that follows scroll, bioluminescent blob backgrounds, frosted glass cards
-**Interaction Philosophy:** Every hover reveals depth — cards glow, buttons pulse like a heartbeat
-**Animation:** Fluid morphing blobs, drip particle trail on scroll, card flip with 3D perspective, text fade-up on intersection
-**Typography System:** "Playfair Display" for headlines (editorial, medical gravitas) + "DM Sans" for body (clean, modern clinical)
-</text>
-<probability>0.08</probability>
-</response>
+## Three Approaches
 
-## Approach B: Fluid Minimalism (CHOSEN)
-<response>
-<text>
-**Design Movement:** Japanese Minimalism meets Scandinavian Medical Wellness — "Ma" (negative space) philosophy
-**Core Principles:** Breathing whitespace, water-like flow, glass morphism depth, restrained elegance
-**Color Philosophy:** Near-white (#f5fafc) background with deep ocean blue (#005d90) primary and teal (#006878) secondary — clinical purity with warmth; cyan accents (#69e5ff) for interactive moments
-**Layout Paradigm:** Asymmetric left-anchored hero, offset grid for services, full-bleed wave dividers between sections
-**Signature Elements:** Animated water droplet cursor/scroll indicator, glassmorphic cards with subtle blur, flowing SVG wave separators
-**Interaction Philosophy:** Interactions feel like water — smooth, inevitable, satisfying; nothing snaps or jumps
-**Animation:** Drip drop follows scroll position on right edge, hero text reveals with staggered fade+slide, cards flip with liquid ease, scroll-triggered section reveals
-**Typography System:** "Manrope" (as per design spec) for all text — varying weights 400–900 create hierarchy without font-switching
-</text>
-<probability>0.07</probability>
-</response>
+### 1. Apothecary Luxe
+Warm marble textures, aged gold type, serif-dominant hierarchy. Probability: 0.04
 
-## Approach C: Dark Luxury Spa
-<response>
-<text>
-**Design Movement:** Dark Mode Medical Luxury — inspired by high-end spa branding and premium supplement aesthetics
-**Core Principles:** Dark depth, gold accents, premium materiality, cinematic sections
-**Color Philosophy:** Near-black (#0a0f14) background, deep teal (#006878) midtones, champagne gold (#c9a96e) accents — luxury medical spa
-**Layout Paradigm:** Full-screen sections with cinematic transitions, centered hero with particle effects, horizontal scroll for services
-**Signature Elements:** Gold drip animation, dark glassmorphic cards, particle field in hero
-**Interaction Philosophy:** Deliberate, weighty interactions — like turning pages of a luxury magazine
-**Animation:** Particle drip system, parallax depth on scroll, card reveals with scale+fade, magnetic button effects
-**Typography System:** "Cormorant Garamond" for display + "Manrope" for body — old-world luxury meets modern clinical
-</text>
-<probability>0.06</probability>
-</response>
+### 2. Clinical Minimalism
+Stark white, precise grid, monospaced accents. Probability: 0.03
+
+### 3. ✅ CHOSEN — Quiet Opulence
+Cream and warm stone backgrounds, burnished gold accents, editorial serif headlines paired with refined sans body text. Feels like a high-end private members' club meets a Harley Street clinic. Probability: 0.08
 
 ---
 
-## Selected: Approach B — Fluid Minimalism
+## Chosen Approach: Quiet Opulence
 
-Clean, flowing, clinical luxury. The design uses the exact color tokens from the Google Stitch spec (primary #005d90, secondary #006878, surface #f5fafc) with Manrope typography throughout. The signature animated water droplet scroll indicator, glassmorphic cards, and fluid wave dividers create the "flowy" aesthetic requested.
+**Design Movement:** New Luxury Minimalism — restraint as the ultimate signal of quality.
+
+**Core Principles:**
+1. Generous whitespace — breathing room is the luxury
+2. Gold as punctuation, not decoration — used sparingly for dividers, CTAs, and element labels
+3. Serif headlines carry the brand voice; clean sans-serif handles everything functional
+4. Photography and product imagery speak first; copy supports
+
+**Color Philosophy:**
+- Background: warm cream `oklch(0.98 0.008 80)` — not clinical white
+- Foreground: deep warm charcoal `oklch(0.18 0.012 65)`
+- Gold accent: `oklch(0.72 0.12 75)` — burnished, not brassy
+- Muted: `oklch(0.94 0.006 80)` — for cards and subtle sections
+- Border: `oklch(0.88 0.008 75)` — warm, barely-there
+
+**Layout Paradigm:** Asymmetric editorial — full-bleed hero with offset text, alternating image-text sections, generous vertical rhythm. No symmetrical grid boxes.
+
+**Signature Elements:**
+1. Thin gold horizontal rule beneath section eyebrows
+2. Oversized roman numerals (I, II, III, IV) as decorative anchors for each element
+3. Fade-in-up entrance animations on scroll
+
+**Interaction Philosophy:** Understated. Hover states reveal rather than shout. Transitions feel like turning a page, not clicking a button.
+
+**Animation:** 400ms ease-out fade-up on scroll entry; 200ms hover transitions; no bouncing or spring physics.
+
+**Typography System:**
+- Display: Cormorant Garamond — editorial, timeless
+- Body: DM Sans — clean, modern, readable
+- Eyebrow labels: DM Sans, tracked uppercase, small
+
+**Brand Essence:** Ruhi Wellness — premium mobile IV therapy for discerning Londoners who treat recovery as a ritual.
+Personality: Refined · Trustworthy · Intimate
+
+**Brand Voice:** Calm authority. No superlatives. Speaks like a knowledgeable friend, not a salesperson.
+Example headlines: "Wellness, restored." / "Four elements. One ritual."
+
+**Wordmark:** RUHI in tracked Cormorant Garamond small-caps, with a fine gold rule beneath.
+
+**Signature Brand Color:** Burnished gold `oklch(0.72 0.12 75)`
