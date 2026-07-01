@@ -486,6 +486,75 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
+          COMING SOON
+      ══════════════════════════════════════════ */}
+      <section className="py-28 md:py-40" style={{ background: "var(--ivory)" }}>
+        <div className="container">
+          <Reveal className="mb-16">
+            <p className="eyebrow mb-5">What's next</p>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 300,
+                fontSize: "clamp(2.4rem, 4vw, 4.5rem)",
+                lineHeight: 1.05,
+                color: "oklch(0.16 0.012 60)",
+              }}
+            >
+              Coming soon
+            </h2>
+          </Reveal>
+
+          {/* Coming Soon Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Rituals */}
+            <Reveal delay={0} direction="scale">
+              <div
+                className="group relative overflow-hidden"
+                style={{ aspectRatio: "4/5", cursor: "pointer" }}
+              >
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xDEfGqEhkyqnbsZu.jpg"
+                  alt="Coming Soon — Rituals"
+                  className="w-full h-full object-cover"
+                  style={{ transition: "transform 800ms cubic-bezier(0.23,1,0.32,1)" }}
+                />
+                {/* Overlay */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(to top, oklch(0.10 0.010 60 / 0.6) 0%, transparent 50%)",
+                  }}
+                />
+              </div>
+            </Reveal>
+
+            {/* Reserves */}
+            <Reveal delay={90} direction="scale">
+              <div
+                className="group relative overflow-hidden"
+                style={{ aspectRatio: "4/5", cursor: "pointer" }}
+              >
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/MfMzwDOBWCfmprsr.jpg"
+                  alt="Coming Soon — Reserves"
+                  className="w-full h-full object-cover"
+                  style={{ transition: "transform 800ms cubic-bezier(0.23,1,0.32,1)" }}
+                />
+                {/* Overlay */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(to top, oklch(0.10 0.010 60 / 0.6) 0%, transparent 50%)",
+                  }}
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
           TESTIMONIALS — dark panel
       ══════════════════════════════════════════ */}
       <section
