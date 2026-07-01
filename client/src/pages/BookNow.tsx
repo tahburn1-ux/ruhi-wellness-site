@@ -1,6 +1,7 @@
 /**
  * RUHI WELLNESS — Book Now Page
  * Premium light theme: 4-step booking flow with luxury styling
+ * Mobile clinic, 24/7 availability, pay-after-treatment model
  */
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
@@ -23,14 +24,14 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const ELEMENTS_OPTIONS = [
-  { value: "element-i-light",    label: "Element I",   sub: "Light",  price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/wOtwAoSfKoTSzqtE.webp" },
-  { value: "element-ii-motion",  label: "Element II",  sub: "Motion", price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/ysDzLZcXoXmeRToh.webp" },
-  { value: "element-iii-glow",   label: "Element III", sub: "Glow",   price: "£200", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/qDHqbpPQlXRTOYuV.webp" },
-  { value: "element-iv-pure",    label: "Element IV",  sub: "Pure",   price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp" },
-  { value: "consultation",       label: "Consultation", sub: "Free 15-min call", price: "Free", duration: "15 min", img: "" },
+  { value: "element-i-light",    label: "Element I",   sub: "Light",  price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/wOtwAoSfKoTSzqtE.webp", tagline: "Brighten. Replenish. Defend.", overview: "Vitamin C, B-complex, glutathione. Immune support, skin radiance, antioxidant defence." },
+  { value: "element-ii-motion",  label: "Element II",  sub: "Motion", price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/ysDzLZcXoXmeRToh.webp", tagline: "Energise. Focus. Recover.", overview: "B-vitamins, amino acids, electrolytes. Energy, mental clarity, athletic recovery." },
+  { value: "element-iii-glow",   label: "Element III", sub: "Glow",   price: "£200", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/qDHqbpPQlXRTOYuV.webp", tagline: "Clarify. Illuminate. Renew.", overview: "Biotin, hyaluronic acid, collagen support. Skin hydration, luminosity, cellular renewal." },
+  { value: "element-iv-pure",    label: "Element IV",  sub: "Pure",   price: "£180", duration: "45–60 min", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp", tagline: "Reset. Detox. Restore.", overview: "Electrolytes, magnesium, detox support. Hydration, stress relief, cellular reset." },
+  { value: "consultation",       label: "Consultation", sub: "Free call with practitioner", price: "Free", duration: "15 min", img: "", tagline: "Discuss which element suits you", overview: "Book a call to discuss your wellness goals and find the right element." },
 ];
 
-const TIME_SLOTS = ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00"];
+const TIME_SLOTS = ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00","00:00"];
 
 function getNext14Days() {
   const days = [];
@@ -101,10 +102,11 @@ export default function BookNow() {
 
   return (
     <Layout>
-      {/* Page header */}
+      {/* Page header with mobile clinic branding */}
       <section className="pt-36 pb-16 md:pt-48 md:pb-20" style={{ background: "var(--ivory)" }}>
         <div className="container max-w-3xl">
           <Reveal>
+            <p className="eyebrow mb-3" style={{ color: "oklch(0.62 0.10 75)" }}>Mobile Clinic — 24/7</p>
             <p className="eyebrow mb-6">Reserve your ritual</p>
           </Reveal>
           <Reveal delay={100}>
@@ -122,6 +124,19 @@ export default function BookNow() {
               Book<br />
               <em style={{ fontStyle: "italic", color: "oklch(0.62 0.10 75)" }}>your element.</em>
             </h1>
+          </Reveal>
+          <Reveal delay={150}>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 300,
+                fontSize: "1rem",
+                color: "oklch(0.42 0.010 65)",
+                maxWidth: "50ch",
+              }}
+            >
+              We come to you. Your home, office, or anywhere. Available 24/7 across London.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -240,32 +255,40 @@ export default function BookNow() {
                     <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(1.8rem, 3vw, 2.8rem)", color: "oklch(0.16 0.012 60)", marginBottom: "2rem", lineHeight: 1.1 }}>
                       Which element would you like?
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {ELEMENTS_OPTIONS.map((opt) => {
                         const selected = selectedElement === opt.value;
                         return (
                           <button
                             key={opt.value}
                             onClick={() => setSelectedElement(opt.value)}
-                            className="text-left flex items-center gap-4 p-5"
+                            className="text-left flex flex-col gap-3 p-6"
                             style={{
                               border: `1px solid ${selected ? "oklch(0.62 0.10 75)" : "oklch(0.88 0.008 75)"}`,
                               background: selected ? "oklch(0.62 0.10 75 / 0.05)" : "oklch(0.99 0.004 80)",
                               transition: "all 200ms cubic-bezier(0.23,1,0.32,1)",
                             }}
                           >
-                            {opt.img && (
-                              <img src={opt.img} alt={opt.sub} style={{ width: 48, height: 64, objectFit: "cover", flexShrink: 0 }} />
-                            )}
-                            <div>
-                              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: selected ? "oklch(0.62 0.10 75)" : "oklch(0.52 0.010 65)", marginBottom: "0.2rem" }}>
-                                {opt.label}
-                              </p>
-                              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "1.3rem", color: "oklch(0.16 0.012 60)", lineHeight: 1 }}>
-                                {opt.sub}
-                              </p>
-                              <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: "0.72rem", color: "oklch(0.52 0.010 65)", marginTop: "0.3rem" }}>
-                                {opt.price} · {opt.duration}
+                            <div className="flex items-start gap-4">
+                              {opt.img && (
+                                <img src={opt.img} alt={opt.sub} style={{ width: 56, height: 72, objectFit: "cover", flexShrink: 0 }} />
+                              )}
+                              <div className="flex-1">
+                                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: selected ? "oklch(0.62 0.10 75)" : "oklch(0.52 0.010 65)", marginBottom: "0.2rem" }}>
+                                  {opt.label}
+                                </p>
+                                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "1.4rem", color: "oklch(0.16 0.012 60)", lineHeight: 1 }}>
+                                  {opt.sub}
+                                </p>
+                                <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: "0.7rem", color: "oklch(0.52 0.010 65)", marginTop: "0.4rem" }}>
+                                  {opt.price} · {opt.duration}
+                                </p>
+                              </div>
+                            </div>
+                            {/* Overview section */}
+                            <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(0.88 0.008 75)" }}>
+                              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "oklch(0.42 0.010 65)", lineHeight: 1.5 }}>
+                                {opt.overview}
                               </p>
                             </div>
                           </button>
@@ -315,7 +338,7 @@ export default function BookNow() {
 
                     {selectedDate && (
                       <>
-                        <p style={labelStyle}>Available times</p>
+                        <p style={labelStyle}>Available times (24/7)</p>
                         <div className="grid grid-cols-4 md:grid-cols-7 gap-2 mb-10">
                           {TIME_SLOTS.map((t) => {
                             const sel = selectedTime === t;
@@ -443,7 +466,7 @@ export default function BookNow() {
                     </div>
 
                     <p style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: "0.78rem", color: "oklch(0.52 0.010 65)", lineHeight: 1.7, marginBottom: "2rem" }}>
-                      By confirming, you agree that this is a booking request. We'll confirm availability and send a confirmation email within 2 hours. Payment is taken at the time of your appointment.
+                      By confirming, you agree that this is a booking request. We'll confirm availability and send a confirmation email within 2 hours. <strong style={{ color: "oklch(0.62 0.10 75)" }}>Payment is taken after your treatment.</strong>
                     </p>
 
                     <div className="flex justify-between">
@@ -454,6 +477,54 @@ export default function BookNow() {
                 )}
               </div>
             )}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* WhatsApp contact section */}
+      <section
+        className="py-24 md:py-32"
+        style={{ background: "var(--ivory-deep)" }}
+      >
+        <div className="container max-w-3xl text-center">
+          <Reveal>
+            <p className="eyebrow mb-6" style={{ color: "oklch(0.62 0.10 75)", justifyContent: "center", display: "flex" }}>
+              Questions?
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 300,
+                fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                color: "oklch(0.16 0.012 60)",
+                marginBottom: "1.5rem",
+                lineHeight: 1.1,
+              }}
+            >
+              Chat with us on<br />
+              <em style={{ fontStyle: "italic", color: "oklch(0.62 0.10 75)" }}>WhatsApp Business</em>
+            </h2>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 300,
+                fontSize: "1rem",
+                color: "oklch(0.42 0.010 65)",
+                marginBottom: "2.5rem",
+                maxWidth: "44ch",
+                margin: "0 auto 2.5rem",
+              }}
+            >
+              Get instant answers about elements, booking, or anything else. Available 24/7.
+            </p>
+            <a
+              href="https://wa.me/447700900123"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <span className="btn-gold">Message us on WhatsApp →</span>
+            </a>
           </Reveal>
         </div>
       </section>

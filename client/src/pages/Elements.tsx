@@ -219,6 +219,19 @@ function ElementCard({ el, index }: { el: typeof ELEMENTS[0]; index: number }) {
           </div>
         </div>
 
+        {/* Active ingredients section — always visible */}
+        <div className="mt-6 p-5" style={{ background: "oklch(0.99 0.004 80)", border: "1px solid oklch(0.88 0.008 75)", borderTop: "none" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.55rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "oklch(0.62 0.10 75)", marginBottom: "0.75rem" }}>Active ingredients</p>
+          <ul className="space-y-1.5">
+            {el.contains.map((c) => (
+              <li key={c.name} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "oklch(0.32 0.010 62)", fontWeight: 300, lineHeight: 1.4 }}>
+                <span style={{ fontWeight: 500, color: "oklch(0.22 0.012 60)" }}>{c.name}</span>
+                {c.note && <span style={{ color: "oklch(0.52 0.010 65)" }}> — {c.note}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Full details toggle */}
         <div className="mt-5">
           <button
@@ -237,7 +250,7 @@ function ElementCard({ el, index }: { el: typeof ELEMENTS[0]; index: number }) {
               cursor: "pointer",
             } as React.CSSProperties}
           >
-            {expanded ? "Hide details ↑" : "See full details ↓"}
+            {expanded ? "Hide full details ↑" : "See full details ↓"}
           </button>
 
           {expanded && (

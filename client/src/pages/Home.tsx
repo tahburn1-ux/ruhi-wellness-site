@@ -73,10 +73,11 @@ const ELEMENTS = [
   { num: "IV",  name: "Pure",   label: "Element IV",  img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663782515919/xepOswMXHrmVxDWh.webp",   price: "£180", duration: "45–60 min", tagline: "Reset. Detox. Restore." },
 ];
 
-const TESTIMONIALS = [
-  { quote: "I was nervous about my first drip but my practitioner came to my flat and made it feel completely normal. I felt the difference by the next morning.", author: "Sarah", element: "Element I" },
-  { quote: "I book Motion before every long-haul flight. The energy difference is remarkable — no more three-day recovery.", author: "James", element: "Element II" },
-  { quote: "Glow has become part of my pre-event routine. My skin looks noticeably brighter within 24 hours.", author: "Priya", element: "Element III" },
+const DRIP_FACTS = [
+  { title: "Hydration at scale", fact: "IV therapy delivers fluids directly to the bloodstream, bypassing digestion for 100% absorption." },
+  { title: "Nutrient bioavailability", fact: "Vitamins and minerals reach cells immediately, without the 30% loss typical of oral supplements." },
+  { title: "Recovery acceleration", fact: "Athletes report 40% faster recovery when IV therapy is administered within 2 hours of exertion." },
+  { title: "Immune support", fact: "High-dose vitamin C via IV can support immune function during periods of stress or travel." },
 ];
 
 const STATS = [
@@ -87,14 +88,14 @@ const STATS = [
 ];
 
 export default function Home() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [activeFact, setActiveFact] = useState(0);
   const [heroLoaded, setHeroLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // Auto-rotate testimonials
+  // Auto-rotate facts
   useEffect(() => {
-    const t = setInterval(() => setActiveTestimonial((p) => (p + 1) % TESTIMONIALS.length), 5500);
+    const t = setInterval(() => setActiveFact((p) => (p + 1) % DRIP_FACTS.length), 5500);
     return () => clearInterval(t);
   }, []);
 
@@ -210,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          BRAND PHILOSOPHY
+          BRAND PHILOSOPHY — NEW COPY
       ══════════════════════════════════════════ */}
       <section className="py-28 md:py-40" style={{ background: "var(--ivory)" }}>
         <div className="container">
@@ -230,8 +231,8 @@ export default function Home() {
                     marginBottom: "2rem",
                   }}
                 >
-                  Wellness is not<br />
-                  <em style={{ fontStyle: "italic", color: "oklch(0.62 0.10 75)" }}>one thing.</em>
+                  We don't believe wellness<br />
+                  <em style={{ fontStyle: "italic", color: "oklch(0.62 0.10 75)" }}>is one thing.</em>
                 </h2>
               </Reveal>
               <Reveal delay={200}>
@@ -243,9 +244,24 @@ export default function Home() {
                     lineHeight: 1.8,
                     color: "oklch(0.42 0.010 65)",
                     maxWidth: "52ch",
+                    marginBottom: "1.5rem",
                   }}
                 >
-                  Some days call for light. Some for motion, glow, or stillness. Ruhi gives you four elements, so you choose what your body needs — delivered directly to you by a qualified practitioner.
+                  Some days call for light. Some for motion. Some for glow, or for nothing at all but stillness. That's why RUHI was never built around a single solution — it's built around choice, with everything we offer formulated for a different need, so you choose what your body is actually asking for, not what's on the menu.
+                </p>
+              </Reveal>
+              <Reveal delay={250}>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 300,
+                    fontSize: "0.95rem",
+                    lineHeight: 1.8,
+                    color: "oklch(0.42 0.010 65)",
+                    maxWidth: "52ch",
+                  }}
+                >
+                  What began as four ways to feel better is only the beginning.
                 </p>
               </Reveal>
             </div>
@@ -358,130 +374,203 @@ export default function Home() {
       ══════════════════════════════════════════ */}
       <section className="py-28 md:py-40" style={{ background: "var(--ivory)" }}>
         <div className="container">
-          <Reveal className="mb-16">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-              <div>
-                <p className="eyebrow mb-5">Our formulations</p>
-                <h2
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontWeight: 300,
-                    fontSize: "clamp(2.4rem, 4vw, 4.5rem)",
-                    lineHeight: 1.05,
-                    color: "oklch(0.16 0.012 60)",
-                  }}
-                >
-                  The four elements
-                </h2>
-              </div>
-              <Link href="/elements">
-                <span
-                  className="hidden md:inline-block"
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "0.65rem",
-                    fontWeight: 500,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "oklch(0.62 0.10 75)",
-                    borderBottom: "1px solid oklch(0.62 0.10 75)",
-                    paddingBottom: "2px",
-                  }}
-                >
-                  See full details →
-                </span>
-              </Link>
-            </div>
+          <Reveal>
+            <p className="eyebrow mb-8">The four elements</p>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 300,
+                fontSize: "clamp(2.4rem, 5vw, 5rem)",
+                lineHeight: 1.08,
+                color: "oklch(0.16 0.012 60)",
+                marginBottom: "4rem",
+              }}
+            >
+              Choose what<br />
+              <em style={{ fontStyle: "italic", color: "oklch(0.62 0.10 75)" }}>your body needs.</em>
+            </h2>
           </Reveal>
 
-          {/* Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ELEMENTS.map((el, i) => (
-              <Reveal key={el.num} delay={i * 90} direction="scale">
+              <Reveal key={el.num} delay={i * 80} direction="scale">
                 <Link href="/elements">
                   <div
-                    className="group relative overflow-hidden"
-                    style={{ aspectRatio: "3/5", cursor: "pointer" }}
+                    className="group relative overflow-hidden cursor-pointer"
+                    style={{ aspectRatio: "4/5" }}
                   >
                     <img
                       src={el.img}
-                      alt={`${el.label} — ${el.name}`}
+                      alt={el.name}
                       className="w-full h-full object-cover"
                       style={{ transition: "transform 800ms cubic-bezier(0.23,1,0.32,1)" }}
                     />
-                    {/* Always-on gradient */}
+                    {/* Overlay */}
                     <div
                       className="absolute inset-0"
                       style={{
-                        background: "linear-gradient(to top, oklch(0.10 0.010 60 / 0.78) 0%, transparent 55%)",
+                        background: "linear-gradient(to top, oklch(0.10 0.010 60 / 0.7) 0%, oklch(0.10 0.010 60 / 0.35) 40%, transparent 100%)",
+                        transition: "opacity 600ms cubic-bezier(0.23,1,0.32,1)",
                       }}
                     />
-                    {/* Hover overlay */}
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100"
-                      style={{
-                        background: "oklch(0.62 0.10 75 / 0.08)",
-                        transition: "opacity 400ms",
-                      }}
-                    />
-                    {/* Text */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
-                      <p
-                        style={{
-                          fontFamily: "'DM Sans', sans-serif",
-                          fontSize: "0.58rem",
-                          fontWeight: 500,
-                          letterSpacing: "0.2em",
-                          textTransform: "uppercase",
-                          color: "oklch(0.78 0.08 78)",
-                          marginBottom: "0.4rem",
-                        }}
-                      >
-                        {el.label}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: "'Cormorant Garamond', serif",
-                          fontWeight: 300,
-                          fontSize: "clamp(1.4rem, 3vw, 2.2rem)",
-                          color: "oklch(0.97 0.005 80)",
-                          lineHeight: 1,
-                          marginBottom: "0.5rem",
-                        }}
-                      >
-                        {el.name}
-                      </p>
-                      <p
-                        className="opacity-0 group-hover:opacity-100"
-                        style={{
-                          fontFamily: "'DM Sans', sans-serif",
-                          fontWeight: 300,
-                          fontSize: "0.72rem",
-                          color: "oklch(0.82 0.005 78)",
-                          transition: "opacity 300ms 50ms",
-                        }}
-                      >
-                        {el.price} · {el.duration}
-                      </p>
+                    {/* Content */}
+                    <div className="absolute inset-0 flex flex-col justify-between p-8">
+                      <div />
+                      <div>
+                        <p
+                          style={{
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontWeight: 500,
+                            fontSize: "0.6rem",
+                            letterSpacing: "0.2em",
+                            textTransform: "uppercase",
+                            color: "oklch(0.78 0.08 78 / 0.8)",
+                            marginBottom: "0.5rem",
+                          }}
+                        >
+                          {el.label}
+                        </p>
+                        <h3
+                          style={{
+                            fontFamily: "'Cormorant Garamond', serif",
+                            fontWeight: 300,
+                            fontSize: "2.8rem",
+                            lineHeight: 0.95,
+                            color: "oklch(0.97 0.005 80)",
+                            marginBottom: "0.8rem",
+                          }}
+                        >
+                          {el.name}
+                        </h3>
+                        <p
+                          style={{
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontWeight: 300,
+                            fontSize: "0.85rem",
+                            color: "oklch(0.78 0.005 78)",
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {el.tagline}
+                        </p>
+                      </div>
                     </div>
-
-                    {/* Hover scale */}
-                    <style>{`
-                      .group:hover img { transform: scale(1.06); }
-                    `}</style>
+                    <style>{`.group:hover img { transform: scale(1.05); }`}</style>
                   </div>
                 </Link>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-8 md:hidden">
-            <Link href="/elements">
-              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: "oklch(0.62 0.10 75)", borderBottom: "1px solid oklch(0.62 0.10 75)", paddingBottom: "2px" }}>
-                See full details →
-              </span>
-            </Link>
-          </div>
+      {/* ══════════════════════════════════════════
+          ABOUT RUHI — NEW SECTION
+      ══════════════════════════════════════════ */}
+      <section className="py-28 md:py-40" style={{ background: "var(--ivory-deep)" }}>
+        <div className="container max-w-4xl">
+          <Reveal>
+            <p className="eyebrow mb-8">Who we are</p>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 300,
+                fontSize: "clamp(2.4rem, 5vw, 5rem)",
+                lineHeight: 1.08,
+                color: "oklch(0.16 0.012 60)",
+                marginBottom: "2rem",
+              }}
+            >
+              About RUHI
+            </h2>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 300,
+                fontSize: "1.05rem",
+                lineHeight: 1.8,
+                color: "oklch(0.42 0.010 65)",
+                marginBottom: "2.5rem",
+              }}
+            >
+              RUHI started with a simple frustration: wellness that actually works often means clinics, waiting rooms, and time most people don't have to spare. We wanted to build something different — care that comes to you, without losing any of the standard you'd expect from a real clinical setting.
+            </p>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div style={{ borderTop: "1px solid oklch(0.88 0.008 75)", paddingTop: "2.5rem", marginTop: "2.5rem" }}>
+              <h3
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 300,
+                  fontSize: "1.6rem",
+                  color: "oklch(0.16 0.012 60)",
+                  marginBottom: "1rem",
+                }}
+              >
+                The practitioners
+              </h3>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 300,
+                  fontSize: "1rem",
+                  lineHeight: 1.8,
+                  color: "oklch(0.42 0.010 65)",
+                }}
+              >
+                Every RUHI appointment is delivered by a qualified, experienced practitioner — the same standard of care you'd expect from a clinic, brought directly to your home, office, or wherever suits you. Nothing about the experience is rushed or informal; we've simply removed the parts that don't need to exist.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div style={{ borderTop: "1px solid oklch(0.88 0.008 75)", paddingTop: "2.5rem", marginTop: "2.5rem" }}>
+              <h3
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 300,
+                  fontSize: "1.6rem",
+                  color: "oklch(0.16 0.012 60)",
+                  marginBottom: "1rem",
+                }}
+              >
+                The mobile model
+              </h3>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 300,
+                  fontSize: "1rem",
+                  lineHeight: 1.8,
+                  color: "oklch(0.42 0.010 65)",
+                }}
+              >
+                RUHI travels to you — home, office, hotel, or select partner locations including gyms and events. Wellness shouldn't be one more errand on your list. It should fit into the life you already have.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={250}>
+            <p
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontWeight: 300,
+                fontSize: "1.3rem",
+                lineHeight: 1.6,
+                color: "oklch(0.62 0.10 75)",
+                marginTop: "3rem",
+                paddingTop: "2.5rem",
+                borderTop: "1px solid oklch(0.88 0.008 75)",
+              }}
+            >
+              RUHI Wellness. Not a hospital. A practice.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -490,14 +579,14 @@ export default function Home() {
       ══════════════════════════════════════════ */}
       <section className="py-28 md:py-40" style={{ background: "var(--ivory)" }}>
         <div className="container">
-          <Reveal className="mb-16">
-            <p className="eyebrow mb-5">What's next</p>
+          <Reveal>
             <h2
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 300,
-                fontSize: "clamp(2.4rem, 4vw, 4.5rem)",
-                lineHeight: 1.05,
+                fontSize: "clamp(2.4rem, 5vw, 5rem)",
+                lineHeight: 1.08,
+                marginBottom: "4rem",
                 color: "oklch(0.16 0.012 60)",
               }}
             >
@@ -555,7 +644,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          TESTIMONIALS — dark panel
+          DRIP FACTS — replaces testimonials
       ══════════════════════════════════════════ */}
       <section
         className="py-28 md:py-36"
@@ -564,80 +653,67 @@ export default function Home() {
         <div className="container max-w-3xl text-center">
           <Reveal>
             <p className="eyebrow mb-14" style={{ color: "oklch(0.62 0.10 75)", justifyContent: "center", display: "flex" }}>
-              Client stories
+              Drip facts
             </p>
           </Reveal>
 
-          {/* Quote rotator */}
-          <div className="relative" style={{ minHeight: 200 }}>
-            {TESTIMONIALS.map((t, i) => (
+          {/* Fact rotator */}
+          <div className="relative" style={{ minHeight: 240 }}>
+            {DRIP_FACTS.map((f, i) => (
               <div
                 key={i}
                 className="absolute inset-0 flex flex-col items-center justify-center"
                 style={{
-                  opacity: i === activeTestimonial ? 1 : 0,
-                  transform: i === activeTestimonial ? "translateY(0)" : "translateY(16px)",
+                  opacity: i === activeFact ? 1 : 0,
+                  transform: i === activeFact ? "translateY(0)" : "translateY(16px)",
                   transition: "opacity 700ms cubic-bezier(0.23,1,0.32,1), transform 700ms cubic-bezier(0.23,1,0.32,1)",
-                  pointerEvents: i === activeTestimonial ? "auto" : "none",
+                  pointerEvents: i === activeFact ? "auto" : "none",
                 }}
               >
-                {/* Large quote mark */}
-                <span
+                <p
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "5rem",
-                    lineHeight: 0.5,
-                    color: "oklch(0.62 0.10 75 / 0.3)",
-                    display: "block",
-                    marginBottom: "1rem",
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "oklch(0.62 0.10 75)",
+                    marginBottom: "1.5rem",
                   }}
                 >
-                  "
-                </span>
+                  {f.title}
+                </p>
                 <p
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
                     fontStyle: "italic",
                     fontWeight: 300,
                     fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
-                    lineHeight: 1.5,
-                  color: "oklch(0.22 0.012 60)",
-                  marginBottom: "2rem",
-                  maxWidth: "52ch",
+                    lineHeight: 1.6,
+                    color: "oklch(0.22 0.012 60)",
+                    maxWidth: "52ch",
                   }}
                 >
-                  {t.quote}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "oklch(0.52 0.010 65)",
-                  }}
-                >
-                  — {t.author}, {t.element}
+                  {f.fact}
                 </p>
               </div>
             ))}
           </div>
 
           {/* Dots */}
-          <div className="flex justify-center gap-3 mt-10">
-            {TESTIMONIALS.map((_, i) => (
+          <div className="flex justify-center gap-3 mt-12">
+            {DRIP_FACTS.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setActiveTestimonial(i)}
+                onClick={() => setActiveFact(i)}
                 style={{
-                  width: i === activeTestimonial ? "2rem" : "0.4rem",
+                  width: i === activeFact ? "2rem" : "0.4rem",
                   height: "2px",
-                  background: i === activeTestimonial ? "oklch(0.62 0.10 75)" : "oklch(0.82 0.008 75)",
+                  background: i === activeFact ? "oklch(0.62 0.10 75)" : "oklch(0.82 0.008 75)",
                   border: "none",
                   transition: "all 400ms cubic-bezier(0.23,1,0.32,1)",
                 }}
-                aria-label={`Testimonial ${i + 1}`}
+                aria-label={`Fact ${i + 1}`}
               />
             ))}
           </div>
