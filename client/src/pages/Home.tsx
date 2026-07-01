@@ -679,7 +679,7 @@ export default function Home() {
                   maxWidth: "44ch",
                 }}
               >
-                Book a free 15-minute call with a Ruhi practitioner before you commit to anything.
+                Book a call with a Ruhi practitioner to discuss which element is right for you.
               </p>
               <Link href="/book">
                 <span className="btn-outline-gold">Book a free consultation →</span>
